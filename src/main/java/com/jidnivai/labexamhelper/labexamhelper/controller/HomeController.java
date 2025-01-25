@@ -26,8 +26,8 @@ public class HomeController {
         model.addAttribute("currentDrive", fileService.getCurrentDrive());
         model.addAttribute("files", fileService.listAllFiles());
         model.addAttribute("parentPath", "");
-        String target = "B:\\";
-        int depth = 5;
+        String target = "D:\\";
+        int depth = 3;
         MyFile fileTree = fileService.getFilesTree(target, depth);
         model.addAttribute("fileTree", fileTree);
         model.addAttribute("flatFileList", fileService.flattenFiles(fileTree));

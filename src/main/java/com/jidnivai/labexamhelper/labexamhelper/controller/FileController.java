@@ -22,7 +22,7 @@ public class FileController {
     @Autowired
     FileService fileService;
 
-    private String target = "B:\\";
+    private String target = "D:\\";
 
     @GetMapping("/listAllFiles/{path}")
     public List<MyFile> getFileList(@PathVariable String path) {
@@ -49,7 +49,7 @@ public class FileController {
 
     @GetMapping("/markAllSafe")
     public ResponseEntity<Void> markAllSafe() {
-        fileService.markAllSafe(target,5);
+        fileService.markAllSafe(target,3);
         return ResponseEntity.status(HttpStatus.FOUND)
                 .location(URI.create("/"))
                 .build();
@@ -73,7 +73,7 @@ public class FileController {
 
     @GetMapping("/deleteAllUnsafe")
     public ResponseEntity<Void> deleteAllUnsafe() {
-        fileService.deleteAllUnsafe(target,5);
+        fileService.deleteAllUnsafe(target,3);
         return ResponseEntity.status(HttpStatus.FOUND)
                 .location(URI.create("/"))
                 .build();
